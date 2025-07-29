@@ -1,0 +1,106 @@
+/*  page3 스킬 - 모바일 */
+
+/* 공통 레이아웃 */
+section#skills {
+   width: 100%;
+   min-height: 100vh; /* 모바일에서 height 고정보다 min-height가 자연스러움 */
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   background: #fff;
+   box-sizing: border-box;
+   padding: 40px 20px;
+}
+
+section#skills .section_title {
+   font-size: 2rem;
+   font-weight: bold;
+   margin-bottom: 80px;
+   position: relative;
+}
+
+.section_container {
+   width: 100%;
+   max-width: 1400px;
+}
+
+.skills_list {
+   display: grid;
+   grid-template-columns: repeat(2, 1fr); /* 기본: 모바일 2개 */
+   gap: 40px;
+   text-align: center;
+   justify-items: center;
+}
+
+.skill_item img {
+   width: 100px; /* 모바일에서 아이콘 크기 작게 */
+   height: auto;
+   margin-bottom: 20px;
+}
+
+.skill_header {
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+   width: 100%;
+   max-width: 120px;
+   font-weight: bold;
+   font-size: 1rem;
+   margin: 5px auto 8px;
+}
+
+.skill_percent {
+   color: #555;
+   font-size: 1.1rem;
+   min-width: 100%;
+   text-align: right;
+}
+
+.skill_bar {
+   width: 100%;
+   max-width: 200px;
+   height: 8px;
+   background: #e5e5e5;
+   border-radius: 10px;
+   overflow: hidden;
+   margin: 0 auto;
+}
+
+.skill_fill {
+   height: 100%;
+   background: #ec1839; /* 진행률 색상 */
+   border-radius: 10px 0 0 10px;
+   transition: width 1s ease-in-out;
+}
+
+/* 반응형 태블릿 768px 이상 */
+@media (min-width: 768px) and (max-width: 1024px) {
+   .skills_list {
+      grid-template-columns: repeat(3, 1fr); /* 태블릿 3개 */
+      gap: 60px;
+   }
+   .skill_item img {
+      width: 130px;
+      margin-bottom: 30px;
+   }
+   .skill_bar {
+      max-width: 180px;
+      height: 7px;
+   }
+}
+
+/* 반응형 PC 1200px 이상 */
+@media (min-width: 1025px) {
+   .skills_list {
+      grid-template-columns: repeat(5, 1fr); /* PC 5개 */
+      gap: 100px;
+   }
+   .skill_item img {
+      width: 160px;
+      margin-bottom: 40px;
+   }
+   .skill_bar {
+      max-width: 200px;
+      height: 8px;
+   }
+}
